@@ -54,40 +54,46 @@ if __name__ == "__main__":
              "MLP")
     run_test(dephts, model, "test_depth_MLP_res", loss_fn, dl_train, dl_test, dl_val, device, True, input_dim,
              hidden_dim, "MLP_Res")
-    #
-    # ### Test with ConvNet
-    # model = ConvNet
-    # input_dim = 3
-    # hidden_dim = 32
-    # run_test(dephts, model, "test_depth_conv", loss_fn, dl_train, dl_test, dl_val, device, False, input_dim, hidden_dim,
-    #          "ConvNet")
-    # run_test(dephts, model, "test_depth_conv_res", loss_fn, dl_train, dl_test, dl_val, device, True, input_dim,
-    #          hidden_dim, "ConvNet_Res")
-    #
-    # ### Test with Fully-convnet
-    # model = FullyConvNet
-    # input_dim = 3
-    # hidden_dim = 32
-    # run_test(dephts, model, "test_depth_fullyconv", loss_fn, dl_train, dl_test_pad, dl_val, device, False, input_dim,
-    #          hidden_dim, "Fully-ConvNet")
-    # run_test(dephts, model, "test_depth_fullyconv_res", loss_fn, dl_train, dl_test_pad, dl_val, device, True, input_dim,
-    #          hidden_dim, "Fully-ConvNet_Res")
-    #
-    # ### Test Gradient depth 5
-    # model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=5, residual_block=False).to(device)
-    # model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=5, residual_block=True).to(device)
-    # run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_5", "Convnet_depht_5_residual",
-    #                   "img/gradient")
-    #
-    # ### Test Gradient depth 10
-    # model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=20, residual_block=False).to(device)
-    # model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=20, residual_block=True).to(device)
-    # run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_20", "Convnet_depht_20_residual",
-    #                   "img/gradient")
-    #
-    # ### Test Gradient depth 10
-    # model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=40, residual_block=False).to(device)
-    # model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=40, residual_block=True).to(device)
-    # run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_40", "Convnet_depht_40_residual",
-    #                   "img/gradient")
+
+    ### Test with ConvNet
+    model = ConvNet
+    input_dim = 3
+    hidden_dim = 32
+    run_test(dephts, model, "test_depth_conv", loss_fn, dl_train, dl_test, dl_val, device, False, input_dim, hidden_dim,
+             "ConvNet")
+    run_test(dephts, model, "test_depth_conv_res", loss_fn, dl_train, dl_test, dl_val, device, True, input_dim,
+             hidden_dim, "ConvNet_Res")
+
+    ### Test with Fully-convnet
+    model = FullyConvNet
+    input_dim = 3
+    hidden_dim = 32
+    run_test(dephts, model, "test_depth_fullyconv", loss_fn, dl_train, dl_test_pad, dl_val, device, False, input_dim,
+             hidden_dim, "Fully-ConvNet")
+    run_test(dephts, model, "test_depth_fullyconv_res", loss_fn, dl_train, dl_test_pad, dl_val, device, True, input_dim,
+             hidden_dim, "Fully-ConvNet_Res")
+
+    ### Test Gradient depth 5
+    model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=5, residual_block=False).to(device)
+    model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=5, residual_block=True).to(device)
+    run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_5", "Convnet_depht_5_residual",
+                      "img/gradient")
+
+    ### Test Gradient depth 10
+    model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=10, residual_block=False).to(device)
+    model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=10, residual_block=True).to(device)
+    run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_10", "Convnet_depht_10_residual",
+                      "img/gradient")
+
+    ### Test Gradient depth 20
+    model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=20, residual_block=False).to(device)
+    model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=20, residual_block=True).to(device)
+    run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_20", "Convnet_depht_20_residual",
+                      "img/gradient")
+
+    ### Test Gradient depth 40
+    model_1 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=40, residual_block=False).to(device)
+    model_2 = ConvNet(input_dim=3, out_dim=10, hidden_dim=32, depth=40, residual_block=True).to(device)
+    run_test_gradient(model_1, model_2, dl_train, loss_fn, device, "Convnet_depht_40", "Convnet_depht_40_residual",
+                      "img/gradient")
 
