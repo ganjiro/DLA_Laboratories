@@ -60,8 +60,8 @@ I trained the MLP with the cross entropy loss considering each corpus as class, 
 The results are analyzed in terms of mean reciprocal rank.
 
 This is the trend of the training loss and the test MRR during the training:
-
-![loss.png](img%2Floss.png)
-![mrr.png](img%2Fmrr.png)
-
+<p float="center">
+  <img src="img/loss.png" width="400"  alt=""/>
+  <img src="img/mrr.png" width="400"  alt=""/>
+</p> 
 
